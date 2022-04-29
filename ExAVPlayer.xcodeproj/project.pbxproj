@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A1F8D760198ECB87EA5500D /* Pods_ExAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83827F7DB3D5DA2574A58B5F /* Pods_ExAVPlayer.framework */; };
+		C6AC880C281B755F0005E2B6 /* MyAudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC880B281B755F0005E2B6 /* MyAudioPlayerView.swift */; };
+		C6AC880E281B780E0005E2B6 /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC880D281B780E0005E2B6 /* Rx+Extension.swift */; };
+		C6AC8832281B7CA80005E2B6 /* MyPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC8831281B7CA80005E2B6 /* MyPlayerView.swift */; };
+		C6AC8834281B8FAC0005E2B6 /* MyAudioRecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC8833281B8FAC0005E2B6 /* MyAudioRecoderView.swift */; };
 		C6F73BF0281A72F200CF02B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F73BEF281A72F200CF02B2 /* AppDelegate.swift */; };
 		C6F73BF2281A72F200CF02B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F73BF1281A72F200CF02B2 /* SceneDelegate.swift */; };
 		C6F73BF4281A72F200CF02B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F73BF3281A72F200CF02B2 /* ViewController.swift */; };
@@ -16,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042ECBEFE86C062E4C8E4326 /* Pods-ExAVPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExAVPlayer.debug.xcconfig"; path = "Target Support Files/Pods-ExAVPlayer/Pods-ExAVPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		83827F7DB3D5DA2574A58B5F /* Pods_ExAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		944A0E70AF4015380C49E851 /* Pods-ExAVPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExAVPlayer.release.xcconfig"; path = "Target Support Files/Pods-ExAVPlayer/Pods-ExAVPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		C6AC880B281B755F0005E2B6 /* MyAudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAudioPlayerView.swift; sourceTree = "<group>"; };
+		C6AC880D281B780E0005E2B6 /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
+		C6AC8831281B7CA80005E2B6 /* MyPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayerView.swift; sourceTree = "<group>"; };
+		C6AC8833281B8FAC0005E2B6 /* MyAudioRecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAudioRecoderView.swift; sourceTree = "<group>"; };
 		C6F73BEC281A72F200CF02B2 /* ExAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F73BEF281A72F200CF02B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F73BF1281A72F200CF02B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A1F8D760198ECB87EA5500D /* Pods_ExAVPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7266AA08EC34A68E3DDCF2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83827F7DB3D5DA2574A58B5F /* Pods_ExAVPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD216266C0C16FF374B151C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				042ECBEFE86C062E4C8E4326 /* Pods-ExAVPlayer.debug.xcconfig */,
+				944A0E70AF4015380C49E851 /* Pods-ExAVPlayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C6F73BE3281A72F200CF02B2 = {
 			isa = PBXGroup;
 			children = (
 				C6F73BEE281A72F200CF02B2 /* ExAVPlayer */,
 				C6F73BED281A72F200CF02B2 /* Products */,
+				BD216266C0C16FF374B151C6 /* Pods */,
+				A7266AA08EC34A68E3DDCF2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +91,10 @@
 				C6F73BEF281A72F200CF02B2 /* AppDelegate.swift */,
 				C6F73BF1281A72F200CF02B2 /* SceneDelegate.swift */,
 				C6F73BF3281A72F200CF02B2 /* ViewController.swift */,
+				C6AC880B281B755F0005E2B6 /* MyAudioPlayerView.swift */,
+				C6AC8833281B8FAC0005E2B6 /* MyAudioRecoderView.swift */,
+				C6AC8831281B7CA80005E2B6 /* MyPlayerView.swift */,
+				C6AC880D281B780E0005E2B6 /* Rx+Extension.swift */,
 				C6F73BF5281A72F200CF02B2 /* Main.storyboard */,
 				C6F73BF8281A72F300CF02B2 /* Assets.xcassets */,
 				C6F73BFA281A72F300CF02B2 /* LaunchScreen.storyboard */,
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6F73C00281A72F300CF02B2 /* Build configuration list for PBXNativeTarget "ExAVPlayer" */;
 			buildPhases = (
+				C78E250ABC4288CF4106D493 /* [CP] Check Pods Manifest.lock */,
 				C6F73BE8281A72F200CF02B2 /* Sources */,
 				C6F73BE9281A72F200CF02B2 /* Frameworks */,
 				C6F73BEA281A72F200CF02B2 /* Resources */,
+				698DBE54C4E51FA49407CC5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +171,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		698DBE54C4E51FA49407CC5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExAVPlayer/Pods-ExAVPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExAVPlayer/Pods-ExAVPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExAVPlayer/Pods-ExAVPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C78E250ABC4288CF4106D493 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExAVPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C6F73BE8281A72F200CF02B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C6F73BF4281A72F200CF02B2 /* ViewController.swift in Sources */,
+				C6AC8834281B8FAC0005E2B6 /* MyAudioRecoderView.swift in Sources */,
 				C6F73BF0281A72F200CF02B2 /* AppDelegate.swift in Sources */,
 				C6F73BF2281A72F200CF02B2 /* SceneDelegate.swift in Sources */,
+				C6AC8832281B7CA80005E2B6 /* MyPlayerView.swift in Sources */,
+				C6AC880E281B780E0005E2B6 /* Rx+Extension.swift in Sources */,
+				C6AC880C281B755F0005E2B6 /* MyAudioPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +366,7 @@
 		};
 		C6F73C01281A72F300CF02B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042ECBEFE86C062E4C8E4326 /* Pods-ExAVPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +395,7 @@
 		};
 		C6F73C02281A72F300CF02B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 944A0E70AF4015380C49E851 /* Pods-ExAVPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
