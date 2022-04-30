@@ -28,7 +28,6 @@ final class MyAudioRecoderView: UIView {
     return button
   }()
   
-  let elapsedSeconds = BehaviorSubject<TimeInterval>(value: 0)
   let stopSubject = PublishSubject<URL>()
   var url: URL {
     return self.audioRecorder.url
@@ -58,8 +57,8 @@ final class MyAudioRecoderView: UIView {
     
     Observable<Int>
       .interval(.milliseconds(500), scheduler: MainScheduler.asyncInstance)
-      .compactMap { [weak self] _ in self?.audioRecorder.currentTime as? TimeInterval }
-      .bind { [weak self] in self?.elapsedSeconds.onNext($0) }
+      .compactMap { [weak self] _ in self?.audioRecorder.currentTime }
+      .bind { print("경과 시간: \($0)") }
       .disposed(by: self.disposeBag)
     
     self.button.rx.isHighlighted

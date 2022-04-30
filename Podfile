@@ -6,4 +6,5 @@ target 'ExAVPlayer' do
   
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxAVFoundation'
 end

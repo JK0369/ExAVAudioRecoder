@@ -33,6 +33,8 @@ final class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = .white
+    
     self.view.addSubview(self.stackView)
     self.view.addSubview(self.label)
     self.stackView.addArrangedSubview(self.playerView)
@@ -50,12 +52,13 @@ final class ViewController: UIViewController {
     ])
     
     self.playerView.url = URL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3")!
+    self.playerView.isHidden = true
     
     self.audioRecoderView.stopSubject
       .bind { [weak self] in
+        print("값 \($0)")
         self?.audioPlayerView.url = $0
         self?.audioPlayerView.readyToPlay = true
-        self?.audioPlayerView.isLocal = true
       }
       .disposed(by: self.disposeBag)
   }

@@ -23,28 +23,20 @@ final class MyAudioPlayerView: UIView {
     let button = UIButton()
     button.setTitleColor(.systemBlue, for: .normal)
     button.setTitleColor(.blue, for: .highlighted)
-    button.setTitle("녹음본 재생하기", for: .normal)
+    button.setTitle("로컬파일 재생하기", for: .normal)
     button.setTitle("중지", for: .selected)
-    button.isHidden = true
     button.translatesAutoresizingMaskIntoConstraints = false
+    button.isHidden = true
     return button
   }()
   
   var url: URL?
-  var isLocal = true
-  var elapsedTime: TimeInterval = 0.0 {
-    didSet {
-      try? self.remainingSeconds.onNext(self.totalDuration.value() - self.elapsedTime)
-    }
-  }
   var readyToPlay: Bool? {
     didSet {
       self.button.isHidden = !(self.readyToPlay == true)
       self.label.isHidden = !(self.readyToPlay == true)
     }
   }
-  let remainingSeconds = BehaviorSubject<TimeInterval>(value: 0.0)
-  let totalDuration = BehaviorSubject<TimeInterval>(value: 0.0)
   
   private var audioPlayer: AVAudioPlayer? {
     didSet {
@@ -86,31 +78,18 @@ final class MyAudioPlayerView: UIView {
   
   func play() {
     guard let url = url else { return }
-
-    if self.isLocal {
-      self.audioPlayer = try? AVAudioPlayer(contentsOf: url)
-    } else {
-      URLSession.shared.rx.data(request: .init(url: url))
-        .compactMap { try? AVAudioPlayer(data: $0) }
-        .observe(on: MainScheduler.asyncInstance)
-        .subscribe(onNext: { [weak self]
-          in self?.audioPlayer = $0
-          self?.button.isHidden = false
-        })
-        .disposed(by: self.playerDisposeBag)
-    }
+    self.audioPlayer = try? AVAudioPlayer(contentsOf: url)
     
     Observable<Int>
-      .interval(.seconds(1), scheduler: MainScheduler.asyncInstance)
+      .interval(.milliseconds(500), scheduler: MainScheduler.asyncInstance)
       .compactMap { [weak self] _ in self?.audioPlayer?.currentTime }
-      .bind(to: self.rx.elapsedTime)
+      .bind { print("경과 시간 = \($0)") }
       .disposed(by: self.playDisposeBag)
     
     self.audioPlayer?.play()
   }
   private func stop() {
     self.audioPlayer?.pause()
-    self.elapsedTime = 0
     self.playerDisposeBag = DisposeBag()
   }
 }
